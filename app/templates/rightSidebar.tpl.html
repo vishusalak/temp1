@@ -1,0 +1,65 @@
+<div style="float : right" class="right floated">
+    <span ng-click="main.previewSidebar.show = !main.previewSidebar.show" ng-if = "main.previewSidebar.show == true"><i class="big middle aligned toggle on icon"></i></span>
+    <span ng-click="main.previewSidebar.show = !main.previewSidebar.show" ng-if = "main.previewSidebar.show == false"><i class="big middle aligned toggle off icon"></i></span>
+</div>
+
+<div class="" ng-if = "main.previewSidebar.show == true">
+
+    <div ng-if = "!main.previewSidebar.dataSet && loading != true">
+        Please Select a dataset for preview.
+    </div>
+
+    <div class="item" ng-if = "main.previewSidebar.dataSet || loading == true">
+        <!--<div class="content">-->
+        <h3 class="header">
+            {{main.previewSidebar.title}}
+        </h3>
+        <!--</div>-->
+        <div ng-if = "main.previewSidebar.loading == true">
+            <div class="">
+                <div class="ui active dimmer">
+                    <div class="ui large text loader">Loading</div>
+                </div>
+            </div>
+        </div>
+        <div ng-if="main.previewSidebar.loading == false">
+        <div class="extra">
+            <span> {{main.previewSidebar.dataSet.total_hits}} HITS | </span>
+            <!--<span>{{main.previewSidebar.database.db_hits}} HITS</span>-->
+            <span> {{main.previewSidebar.dataSet.rows.length}} ROWS | </span>
+            <span> {{main.previewSidebar.dataSet.cols.length}} COLUMNS | </span>
+        </div>
+
+        <p>Source : {{main.previewSidebar.dataSet.meta.source_name}}</p>
+
+        <table  class="ui fixed single line celled table">
+            <thead>
+            <tr align = "center">
+                <th>{{main.previewSidebar.dataSet.cols[5].description}}</th>
+                <th>{{main.previewSidebar.dataSet.cols[9].description}}</th>
+                <th>{{main.previewSidebar.dataSet.cols[10].description}}</th>
+            </tr></thead>
+            <tbody>
+            <tr align="center" ng-repeat="row in main.previewSidebar.dataSet.rows">
+                <td>{{row[main.previewSidebar.dataSet.cols[5].internal_name]}}</td>
+                <td>{{row[main.previewSidebar.dataSet.cols[9].internal_name]}}</td>
+                <td>{{row[main.previewSidebar.dataSet.cols[10].internal_name]}}</td>
+            </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+
+
+
+    <!--<div class="ui basic segment">-->
+        <!--<img src="http://semantic-ui.com/images/avatar2/large/molly.png" class="ui image wireframe"/>-->
+        <!--<p>-->
+            <!--Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.-->
+        <!--</p>-->
+    <!--</div>-->
+
+
+
+</div>

@@ -1,0 +1,59 @@
+body {
+    background-color: #FFFFFF;
+}
+
+body,
+div {
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.ui.menu .item img.logo {
+    margin-right: 1.5em;
+}
+
+.wireframe {
+    margin-top: 2em;
+}
+
+#tophalf {
+    margin-top: 0;
+    overflow: visible;
+}
+
+#bottomhalf {
+    margin-left: 0;
+    margin-right: 0;
+    height: calc(100vh - 43px);
+}
+
+#mainview {
+    padding: 2%;
+}
+.no-right-padding{
+    padding-right: 0 !important;
+}
+
+.highlighted-content{
+    background: gainsboro !important;
+    padding: 1% !important;
+}
+
+/* right sidebar */
+
+#rightSidebar {
+    padding: 1%;
+}

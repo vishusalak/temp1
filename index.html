@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access - DashBoard</title>
+    <base href = "/">
+
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="semantic/dist/semantic.js" type="application/javascript"></script>
+
+    <script src="app/config/app.js"></script>
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/services/dataService.js"></script>
+    <script src="app/services/apiService.js"></script>
+
+
+</head>
+<body ng-app = "app" ng-controller="mainController as main">
+
+   <header class="ui top menu" id = "tophalf" ng-include="'app/templates/header.tpl.html'"></header>
+
+    <div id="bottomhalf" class="ui grid bottom attached">
+        <div class="row" style="padding-top: 0 !important;">
+
+            <div id="mainview" class="ui eleven wide column no-right-padding" ng-include="'app/templates/mainView.tpl.html'"></div>
+
+            <div id="rightSidebar" class="ui five wide column" ng-class = "{'highlighted-content' : main.previewSidebar.show}" ng-include="'app/templates/rightSidebar.tpl.html'"></div>
+        </div>
+    </div>
+
+
+<script>
+    $('.ui.dropdown').dropdown();
+</script>
+</body>
+</html>

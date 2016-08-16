@@ -1,0 +1,28 @@
+<div class="ui grid">
+    <div class="row">
+        <div class="sixteen wide column">
+            <!--<h1 class="ui header">{{dataSet.text}}</h1>-->
+            <div class="ui items">
+                <div class="item" ng-repeat="dataSet in main.dataSets" ng-class="{'highlighted-content':main.previewSidebar.title == dataSet.text}">
+                    <!--{{dataSet}}-->
+                    <i class="big unhide middle aligned icon" ng-show = "main.previewSidebar.title == dataSet.text"></i>
+                    <!--<div class="middle aligned">-->
+                    <!--<i class="large info circle icon"></i>-->
+                    <!--<i class="large content icon"></i>-->
+                    <!--</div>-->
+                    <div class="content" ng-mouseenter="main.getDataSet(dataSet.payload.path,dataSet.text)">
+                        <div class="header">{{dataSet.text}}</div>
+                        <div class="description">{{dataSet.payload.description}}</div>
+                        <div class="extra">
+                            <span class="green">{{dataSet.score}} DATA SCORE</span>
+                            <!--<span>{{database.file_type}}</span>-->
+                            <!--<span>{{database.db_hits}} HITS</span>-->
+                            <!--<span>{{database.db_rows}} ROWS</span>-->
+                            <!--<span>{{database.db_columns}} COLUMNS</span>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
